@@ -52,7 +52,7 @@ npm run test
 
 ## Authors
 
-* **Joko Susilo < jokosu10@opensuse.org >**
+* **Joko Susilo < susilo.j8@gmail.com >**
 
 ## License
 

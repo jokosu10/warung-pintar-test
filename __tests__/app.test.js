@@ -15,9 +15,9 @@ describe('Test /', () => {
         expect(response.status).toEqual(200);
         expect(response.body).toHaveProperty('message');
         expect({
-            message: "Joko Susilo Ganteng"
+            message: "Joko Susilo"
         }).toMatchObject({
-            message: "Joko Susilo Ganteng"
+            message: "Joko Susilo"
         });
         done();
     });

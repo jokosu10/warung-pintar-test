@@ -4,18 +4,11 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const headerParser = require("header-parser");
 
-const helmet = require("helmet");
 const cors = require("cors");
-const passport = require("passport");
 const morgan = require('morgan');
 
-const swaggerJSDoc = require('swagger-jsdoc');
-const swaggerUi = require('swagger-ui-express');
-
-//require all the routes
-let IndexRouter = require("../routes/IndexRoute");
-
-let server = express();
+const server = express();
+const fs = require('fs');
 
 // configure app to use bodyParser
 server.use(bodyParser.json());
@@ -25,10 +18,8 @@ server.use(express.urlencoded({
 }));
 server.use(morgan('tiny'));
 server.use(cookieParser());
-server.use(helmet());
 server.use(cors());
 server.use(headerParser);
-server.use(passport.initialize());
 
 /**
  * enable CORS
@@ -40,8 +31,12 @@ server.use((req, res, next) => {
     next();
 });
 
+//require all the routes
+let IndexRoutes = require("../routes/IndexRoute");
+let DefaultRoutes = require("../routes/MessageRoutes")(server, fs);
+
 //prefix all the routes
-server.use(IndexRouter);
+server.use(IndexRoutes);
 
 // catch 404 and forward to error handler
 server.use(function (req, res, next) {
