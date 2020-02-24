@@ -1,6 +1,6 @@
 # PRE-TEST FOR BACKEND ENGINEER
 
-The structure template NodeJS.
+Create simple API.
 
 ### Prerequisites
 
@@ -14,10 +14,10 @@ Make sure you install this in your workspace.
 
 ### Installing
 
-Step by step for use this template to workspace.
+Step by step for installing apps.
 ```
-1. git clone https://github.com/jokosu10/template-framework-express.git
-2. cd template-framework-express
+1. git clone https://github.com/jokosu10/warung-pintar-test.git
+2. cd warung-pintar-test
 3. npm install
 ```
 
